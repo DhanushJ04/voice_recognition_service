@@ -1,3 +1,13 @@
-from google import genai
+# app/config/gemini.py
 
-client = genai.Client(api_key="AIzaSyDo8ArYjlP0dBi59R4Ea7yQVExd0F0y8Hc")
+from google import genai
+import os
+from dotenv import load_dotenv
+
+# Load environment variables
+load_dotenv()
+
+# Get API key
+api_key = os.getenv("GEMINI_API_KEY")
+
+client = genai.Client(api_key=api_key)
