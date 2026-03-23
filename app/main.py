@@ -12,6 +12,10 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+@app.get("/")
+def home():
+    return {"message": "Voice Recognition API is running"}
+
 class VoiceRequest(BaseModel):
     text: str
 
